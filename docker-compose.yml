@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: docker
+      args:
+        WWWUSER: '${WWWUSER}'
+        WWWGROUP: '${WWWGROUP}'
+    image: proxyfilter/app
+    volumes:
+      - ../:/app
+    environment:
+      WWWUSER: '${WWWUSER}'
+      WWWGROUP: '${WWWGROUP}'
